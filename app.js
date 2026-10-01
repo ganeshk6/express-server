@@ -1,4 +1,6 @@
 const express = require('express')
+const productRoutes = require('./routes/product')
+const categoryRoutes = require('./routes/category')
 const app = express()
 const PORT = 4000
 
@@ -32,18 +34,9 @@ app.use((req, res, next)=>{
     next()
 })
 
-app.post('/products', (req, res, next)=>{
-    res.send(`A new product has been added.`)
-})
-app.get('/products', (req, res, next)=>{
-    res.send(`Here is the list of all products.`)
-})
-app.get('/categories', (req, res, next)=>{
-    res.send(`Here is the list of all categories.`)
-})
-app.post('/categories', (req, res, next)=>{
-    res.send(`A new category has been created.`)
-})
+app.use('/products', productRoutes)
+app.use('/categories', categoryRoutes)
+
 // app.use('/{*splat}', (req, res) => {
 //     res.status(404).send('<h1>404 - Page Not Found</h1>')
 // })
