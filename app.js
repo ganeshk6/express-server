@@ -7,8 +7,10 @@ app.use((req, res, next)=>{
     next()
 })
 
-app.get('/welcome', (req, res, next)=>{
-    res.send(`Welcome ${req.user}`)
+app.get('/welcome/:username', (req, res, next)=>{
+    const { username } = req.params;
+    const { role } = req.query;
+    res.send(`Welcome ${username}, your role is ${role}`)
 })
 
 app.post('/orders', (req, res, next)=>{
