@@ -34,8 +34,8 @@ app.use((req, res, next)=>{
     next()
 })
 
-app.use('/products', productRoutes)
-app.use('/categories', categoryRoutes)
+app.use('/api/products', productRoutes)
+app.use('/api/categories', categoryRoutes)
 
 // app.use('/{*splat}', (req, res) => {
 //     res.status(404).send('<h1>404 - Page Not Found</h1>')

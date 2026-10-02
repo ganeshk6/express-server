@@ -1,11 +1,10 @@
 const express = require('express')
+const productController = require('../controller/productController')
 const router = express.Router()
 
 router.post('/',(req, res, next)=>{
     res.send(`A new product has been added.`)
 })
-router.get('/', (req, res, next)=>{
-    res.send(`Here is the list of all products.`)
-})
+router.get('/', productController.getAllProducts)
 
 module.exports = router
