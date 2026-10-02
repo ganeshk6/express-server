@@ -9,7 +9,7 @@
 
     <h1>Here is the list of all products.</h1>
 
-    <form>
+    <form onsubmit="handleAddProduct(event)">
         <label for="product">Product Name</label>
 
         <input 
@@ -20,6 +20,7 @@
 
         <button type="submit">Add Product</button>
     </form>
-
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="/script.js"></script>
 </body>
 </html>
